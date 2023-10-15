@@ -75,8 +75,8 @@
     <LibraryPath>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\src;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\include;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\src;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\Opengl\glfw-3.3.8\include;C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\C++\Graphics\libraries\include;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -141,8 +141,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EBO.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ShaderClass.cpp" />
+    <ClCompile Include="VAO.cpp" />
+    <ClCompile Include="VBO.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Default.frag" />
+    <None Include="Default.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EBO.h" />
+    <ClInclude Include="ShaderClass.h" />
+    <ClInclude Include="VAO.h" />
+    <ClInclude Include="VBO.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
