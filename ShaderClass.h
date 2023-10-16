@@ -2,7 +2,7 @@
 #define SHADER_CLASS_H
 
 #include <glad/glad.h>
-#include <string>
+#include <ctime>
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -15,6 +15,7 @@ public:
 	GLuint ID;
 	Shader(const char* vertexFile, const char* fragmentfile);
 
+	void pass();
 	void Activate();
 	void Delete();
 };

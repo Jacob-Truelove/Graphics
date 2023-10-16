@@ -46,7 +46,7 @@ GLfloat vertices[] =
 	{
 		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower left corner
 		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower right corner
-		0.0f, 1, 0.0f, // Upper corner
+		0.0f, .5 * float(sqrt(3)) *2/3, 0.0f, // Upper corner
 		-0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner left
 		0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner right
 		0.0f, -0.5f * float(sqrt(3)) / 3, 0.0f // Inner down
@@ -58,11 +58,22 @@ GLfloat vertices[] =
 		5, 4, 1
 	};
 
+	GLfloat square[] = {
+		1.0f, 1.0f, .0f,
+		1.0f, -1.0f, 0.0f,
+		-1.0f, 1.0f, 0.0f,
+		-1.0f, -1.0f, 0.0f};
+
+	GLuint order[] = { 0,1, 2, 3, 2, 1 };
 	Shader shaderprogram("default.vert", "default.frag");
 	
+	VAO VAO2;
+	VAO2.Bind();
 	VAO VAO1;
 	VAO1.Bind();
 
+	VBO VBO2(square, sizeof(square));
+	EBO EBO2(order, sizeof(order));
 	VBO VBO1(vertices, sizeof(vertices));
 	EBO EBO1(indices, sizeof(indices));
 
@@ -71,6 +82,10 @@ GLfloat vertices[] =
 	VBO1.unBind();
 	EBO1.unBind();
 	
+	VAO2.LinkVBO(VBO2, 1);
+	VAO2.unBind();
+	VBO2.unBind();
+	EBO2.unBind();
 	// Swaps glfw's buffer to the new one created with glad
 	glfwSwapBuffers(window);
 
@@ -81,9 +96,13 @@ GLfloat vertices[] =
 
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		
 		shaderprogram.Activate();
+		shaderprogram.pass();
 		VAO1.Bind();
 		glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
+		VAO2.Bind();
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		
 		glfwSwapBuffers(window); 
 

@@ -52,6 +52,12 @@ Shader::Shader(const char* vertextFile, const char* fragFile) {
 
 }
 
+void Shader::pass() {
+
+	GLint time = glGetUniformLocation(ID, "time");
+	glUniform1f(time, (float)clock()/(CLOCKS_PER_SEC));
+}
+
 void Shader::Activate() {
 	glUseProgram(ID);
 }

@@ -5,6 +5,14 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Laptop|Win32">
+      <Configuration>Laptop</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Laptop|x64">
+      <Configuration>Laptop</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
@@ -32,6 +40,12 @@
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Laptop|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -40,6 +54,12 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Laptop|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
@@ -60,10 +80,16 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Laptop|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Laptop|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -71,14 +97,37 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\include;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\src;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\glfw-3.3.8\include;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\include;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\src;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Laptop|Win32'">
+    <IncludePath>C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\glfw-3.3.8\include;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\include;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\src;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\Opengl\glfw-3.3.8\include;C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\C++\Graphics\libraries\include;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\glfw-3.3.8\include;C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\Opengl\glfw-3.3.8\include;C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\C++\Graphics\libraries\include;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Laptop|x64'">
+    <IncludePath>C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\glfw-3.3.8\include;C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\Opengl\glfw-3.3.8\include;C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\C++\Graphics\libraries\include;C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\jetfi\OneDrive\Documents\Code\C++\Graphics\libraries\lib;C:\Users\Truelove.DESKTOP-TMF37E8\Documents\Code\C++\Graphics\libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\objs\x64\Debug;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\builds\windows\vc2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Laptop|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
@@ -110,6 +159,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\objs\x64\Debug;C:\Users\jetfi\OneDrive\Documents\Code\Graphics\freetype-2.13.0\builds\windows\vc2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Laptop|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
