@@ -46,7 +46,7 @@ GLfloat vertices[] =
 	{
 		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower left corner
 		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower right corner
-		0.0f, 1, 0.0f, // Upper corner
+		0.0f, .5 * float(sqrt(3)) *2/3, 0.0f, // Upper corner
 		-0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner left
 		0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner right
 		0.0f, -0.5f * float(sqrt(3)) / 3, 0.0f // Inner down
@@ -91,7 +91,9 @@ GLfloat vertices[] =
 	}
 
 	shaderprogram.Delete();
-
+	VAO1.Delete();
+	VBO1.Delete();
+	EBO1.Delete();
 	// Frees the space window was taking preventing memory leaks and terminating glfw
 	glfwDestroyWindow(window);
 	glfwTerminate();
